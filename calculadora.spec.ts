@@ -1,6 +1,6 @@
 import { Calculator } from "./calculadora";
 
-describe("Calcular número de pessoas que visualizarão o anúncio", () => {
+describe("Calculate number of people who will see the announcement", () => {
   it("should be able to do a simulation for R$123", () => {
     expect(Calculator.simulate(123)).toBe(10628);
   });
