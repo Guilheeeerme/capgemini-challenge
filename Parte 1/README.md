@@ -1,6 +1,6 @@
 # Desafio Capgemini - 1° Parte: Uma calculadora de alcance de anúncio online.
 
-Fiz a resolução do desafio utilizando TypeScript no Node.js, está toda no arquivo `calculadora.ts`.
+Fiz a resolução do desafio utilizando TypeScript no Node.js, está toda no arquivo `calculadora.ts` dentro da pasta "Parte 1".
 
 ## ⚙ Requisitos
 
@@ -9,8 +9,9 @@ Fiz a resolução do desafio utilizando TypeScript no Node.js, está toda no arq
 ## 🔥 Instalação e execução
 
 - Faça um clone desse repositório;
+- Entre na pasta **Parte 1**
 - Dentro da pasta, rode `npm install` ou `yarn` no terminal para instalar as dependências;
-- Rode `npm run dev` ou `yarn dev` para executar o arquivo `calculadora.ts` e fazer as projeções; </br> </br>
+- Execute `npm run dev` ou `yarn dev` para executar o arquivo `calculadora.ts` e fazer as projeções; </br> </br>
 
 ## Testes
 
