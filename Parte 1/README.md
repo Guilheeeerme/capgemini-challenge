@@ -9,8 +9,7 @@ Fiz a resolução do desafio utilizando TypeScript no Node.js, está toda no arq
 ## 🔥 Instalação e execução
 
 - Faça um clone desse repositório;
-- Entre na pasta **Parte 1**
-- Dentro da pasta, rode `npm install` ou `yarn` no terminal para instalar as dependências;
+- Dentro da **Pasta 1**, execute `npm install` ou `yarn` no terminal para instalar as dependências;
 - Execute `npm run dev` ou `yarn dev` para executar o arquivo `calculadora.ts` e fazer as projeções; </br> </br>
 
 ## Testes
