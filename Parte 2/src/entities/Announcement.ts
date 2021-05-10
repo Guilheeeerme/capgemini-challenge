@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-import { Column, Entity, PrimaryColumn } from "typeorm";
+import { Column, Entity, PrimaryColumn, OneToOne } from "typeorm";
 
 @Entity("announcements")
 class Announcement {
