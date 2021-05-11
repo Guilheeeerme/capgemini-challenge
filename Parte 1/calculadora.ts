@@ -15,42 +15,33 @@ export class Calculator {
   }
 
   public static simulate(value: number): number | void {
+    const initialViews = value * 30;
+
     if (value <= 0) {
       console.log("Valor inválido");
       return;
     }
 
-    const initialViews = value * 30;
-    let total = 0;
+    let views: number = this.calculate(initialViews);
 
-    if (initialViews < 100) {
-      total = initialViews;
-      return total;
-    }
-
-    if (initialViews > 100) {
-      let views: number = this.calculate(initialViews);
-      let clicks: number = this.calculate(views);
-      let shares: number = this.calculate(clicks);
-      let totalViews: number = this.calculate(shares);
-
-      total = initialViews + views + clicks + shares + totalViews;
-    }
-
-    return Math.floor(total);
+    return Math.floor(views);
   }
 
   private static calculate(views: number): number {
+    const SHARING_SEQUENCE = 4;
+
     const clicks = (views / 100) * 12;
     const shares = (clicks / 20) * 3;
-    const viewsShares = shares * 40;
+    const views_shares = shares * 40 * SHARING_SEQUENCE;
 
-    return viewsShares;
+    const total = views_shares + views;
+
+    return total;
   }
 }
 
 const input: Prompt = prompt();
-const value = Number(input("Valor a ser investido: R$"));
+const value = Number(input("Informe um valor inteiro a ser investido: R$"));
 
 Calculator.invest(value);
 
