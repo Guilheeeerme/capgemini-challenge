@@ -24,22 +24,6 @@ class AnnouncementController {
 
     return response.status(201).json(announcement);
   }
-
-  async findByInterval(
-    request: Request,
-    response: Response
-  ): Promise<Response> {
-    const { start_date, end_date } = request.body;
-
-    const announcementService = new AnnouncementService();
-
-    const announcement = await announcementService.findByInterval(
-      start_date,
-      end_date
-    );
-
-    return response.json(announcement);
-  }
 }
 
 export { AnnouncementController };
