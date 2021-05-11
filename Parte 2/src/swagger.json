@@ -1,0 +1,203 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Challenge Documentation",
+    "description": "This is an API Register announcements",
+    "version": "1.0.0",
+    "contact": {
+      "email": "guilherme_moura.102@outlook.com"
+    }
+  },
+  "paths": {
+    "/announcements": {
+      "post": {
+        "tags": ["Announcement"],
+        "summary": "Create a announcement",
+        "description": "Create a new announcement",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "client": {
+                    "type": "string"
+                  },
+                  "start_date": {
+                    "type": "string"
+                  },
+                  "end_date": {
+                    "type": "string"
+                  },
+                  "investiment_day": {
+                    "type": "number"
+                  }
+                },
+                "example": {
+                  "name": "Anúncio de exemplo",
+                  "client": "Capgemini",
+                  "start_date": "10/05/2021",
+                  "end_date": "16/05/2021",
+                  "investiment_day": 2
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "client": {
+                        "type": "string"
+                      },
+                      "start_date": {
+                        "type": "string"
+                      },
+                      "end_date": {
+                        "type": "string"
+                      },
+                      "investiment_day": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reports?client=": {
+      "get": {
+        "tags": ["Reports"],
+        "summary": "List all reports for a client",
+        "description": "List all reports for a client",
+        "parameters": [
+          {
+            "name": "client",
+            "in": "query",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "client": {
+                        "type": "string"
+                      },
+                      "amount_invested": {
+                        "type": "number"
+                      },
+                      "total_maximum_views": {
+                        "type": "number"
+                      },
+                      "total_maximum_clicks": {
+                        "type": "number"
+                      },
+                      "total_maximum_shares": {
+                        "type": "number"
+                      },
+                      "start_date": {
+                        "type": "string"
+                      },
+                      "end_date": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reports/interval?start_date=&end_date=": {
+      "get": {
+        "tags": ["Reports"],
+        "summary": "List all reports filtered by a time range",
+        "description": "List all reports filtered by a time range",
+        "parameters": [
+          {
+            "name": "start_date",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "end_date",
+            "in": "query",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "client": {
+                        "type": "string"
+                      },
+                      "amount_invested": {
+                        "type": "number"
+                      },
+                      "total_maximum_views": {
+                        "type": "number"
+                      },
+                      "total_maximum_clicks": {
+                        "type": "number"
+                      },
+                      "total_maximum_shares": {
+                        "type": "number"
+                      },
+                      "start_date": {
+                        "type": "string"
+                      },
+                      "end_date": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
